@@ -1,6 +1,3 @@
-
-       
-   
 let email = "sfsd55@A";
 
 function dlina () {
@@ -45,9 +42,6 @@ function isEmpty () {
     else {return false} 
    
 }
-
-
-
 
 function validation () {
     if (dlina() != true) {
