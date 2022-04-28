@@ -1,7 +1,7 @@
 
        
    
-let email = "   ";
+let email = "sfsd55@A";
 
 function dlina () {
  if (email.length < 5 || email.length > 64) 
