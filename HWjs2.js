@@ -1,4 +1,5 @@
-let email = "sfsd55@A";
+
+let email = "aaaS5@aa";
 
 function dlina () {
  if (email.length < 5 || email.length > 64) 
@@ -36,15 +37,19 @@ function sobaka () {
   }
 
 function isEmpty () {
-    if (email.trim() != '') {
+    if (email.length != 0) {
         return true
     }
     else {return false} 
    
 }
 
+
 function validation () {
-    if (dlina() != true) {
+    if (isEmpty() != true) {
+        console.log("Поле не должно быть пустым")
+    }
+    else if (dlina() != true) {
         console.log("В поле необходимо ввести от 5 до 64 символов")
     }
     else if (bukvi_mal() != true) {
@@ -59,9 +64,7 @@ function validation () {
     else if (sobaka() != true) {
         console.log("В поле необходимо ввести символ - @ ")
     }
-    else if (isEmpty() != true) {
-        console.log("Поле не должно быть пустым")
-    }
+    
     else {console.log("OK") }
  }
 
