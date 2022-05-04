@@ -1,71 +1,50 @@
+let email = "55";
 
-let email = "aaaS5@aa";
-
-function dlina () {
- if (email.length < 5 || email.length > 64) 
-    {return false}
-   
-else  {return true}
+function input_length (string) {
+let isValid = string.length > 4 && email.length < 65
+return isValid ? false : console.log('В поле ввести от 5 до 64 символов');
 }
 
-function bukvi_mal () {
-    if (email.match(/[a-z]/)) {
-        return true
-    }
-    else {return false} 
-}
-
-function bukvi_bolshie () {
-    if (email.match(/[A-Z]/)) {
-        return true
-    }
-    else {return false} 
-  }
-
-function cifri () {
-    if (email.match(/[0-9]/)) {
-        return true
-    }
-    else {return false} 
+function words_small (string) {
+    let isValid = /[a-z]/g.test(string)
+    return isValid ? false : console.log("В поле необходимо ввести латинские символы") ; 
     
-}
-function sobaka () {
-    if (email.match(/[@]/)) {
-        return true
-    }
-    else {return false}
   }
 
-function isEmpty () {
-    if (email.length != 0) {
-        return true
-    }
-    else {return false} 
+function words_big (string) {
+    let isValid = /[A-Z]/g.test(string) 
+    return isValid ? false : console.log("В поле необходимо ввести одну большую букву") ;
+     
+  }
+
+function numbers (string) {
+   let isValid = /\d/g.test(string) 
+   return isValid ? false : console.log("В поле необходимо ввести одну цифру") ;
+}      
+    
+function symbol (string) {
+    let  isValid = /@/g.test(string)
+    return isValid ? false : console.log( "В поле необходимо ввести символ - @ ") ;
+  
+}
+
+function isEmpty (string) {
+    let isValid = string.length != 0 
+    return isValid ? false : console.log("Строка не должна быть пустой") ;
    
 }
 
+function validation(string) {
+  let valid_results = [];
+  
+  valid_results.push(input_length(string))
+  valid_results.push(words_small(string))
+  valid_results.push(words_big(string))
+  valid_results.push(numbers(string))
+  valid_results.push(symbol(string))
+  valid_results.push(isEmpty(string))
 
-function validation () {
-    if (isEmpty() != true) {
-        console.log("Поле не должно быть пустым")
-    }
-    else if (dlina() != true) {
-        console.log("В поле необходимо ввести от 5 до 64 символов")
-    }
-    else if (bukvi_mal() != true) {
-        console.log("В поле необходимо ввести латинские символы")
-    }
-    else if (bukvi_bolshie() != true) {
-        console.log("В поле необходимо ввести одну большую букву")
-    }
-    else if (cifri() != true) {
-        console.log("В поле необходимо ввести одну цифру")
-    }
-    else if (sobaka() != true) {
-        console.log("В поле необходимо ввести символ - @ ")
-    }
-    
-    else {console.log("OK") }
- }
+valid_results.includes(false) ? console.log('   --- Исправьте строку ---') : console.log('OK') 
 
-validation();
+
+validation(email)
