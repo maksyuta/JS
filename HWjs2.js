@@ -1,4 +1,4 @@
-let email = "55";
+let email = "";
 
 function input_length (string) {
 let isValid = string.length > 4 && email.length < 65
@@ -44,7 +44,8 @@ function validation(string) {
   valid_results.push(symbol(string))
   valid_results.push(isEmpty(string))
 
-valid_results.includes(false) ? console.log('   --- Исправьте строку ---') : console.log('OK') 
+valid_results.includes(undefined) ? console.log('   --- Исправьте строку ---') : console.log('OK') 
 
+}
 
 validation(email)
